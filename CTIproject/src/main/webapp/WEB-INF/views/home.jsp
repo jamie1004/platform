@@ -11,5 +11,6 @@
 </h1>
 
 <P>  The time on the server is ${serverTime}. </P>
+<P>  CTI 자동으로 구축할 페이지 </P>
 </body>
 </html>
