@@ -1,32 +1,57 @@
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-	pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html; charset=utf-8"
+	pageEncoding="utf-8" %>
 <%@taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<link href="<c:url value='/css/login.css'/>" rel="stylesheet" type='text/css'>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 <title>RSUPPORT OlinePart</title>
 </head>
-<body>
+<body class ="container">
+	<section class="login-form">
 
-	<h1>CTI site</h1>
-	<h4>Login Form</h4>
+	<h1>WHO ARE YOU</h1>
 	
-	<form action='<spring:url value="/loginAction"/>' method="post">
-    <table>
-      <tr>
-        <td>Username</td>
-        <td><input type="text" name="username"></td>
-      </tr>
-      <tr>
-        <td>Password</td>
-        <td><input type="password" name="password"></td>
-      </tr>
-      <tr>
-        <td><button type="submit">Login</button></td>
-      </tr>
-    </table>
-  </form>
-  <br/>
+		<form action='<spring:url value="/loginAction"/>' method="post">
+			<div class="int-area">
+				<input name="username" type="text" class="form-control" required />
+				 <label for='id'>USER ID</label>
+			</div>
+			<div class="int-area">
+				<input name="password" type="password" class="form-control" required />
+				<label for='pw'>PASSWORD</label>
+			</div>
+			<div class="btn-area">
+				<button type="submit">LOGIN</button>
+			</div>
+		</form>
+ 			<div class="caption">
+		    	<a onclick="alert('관리자에게 문의하세요.');">Forgot Password?</a>
+		    </div>
+  	 		
+	</section>
+	<!-- <script>
+		let id =$('#id');
+		let pw =$('#pw');
+		let btn =$('#btn');
+		
+		$(btn).on('click', function(){
+			if($(id).val*)==:){
+			$(id).next('label').addClass('warning');
+			setTimeout(function(){
+				$('label').removeClass('warning');
+			},1500);
+		}
+			else if($(pw).val() == ""){
+			$(pw).next('label').addClass('warning');
+			setTimeout(function(){
+				$('label').removeClass('warning');
+			},1500);
+		}
+		});
+	</script> -->
 </body>
 </html>
