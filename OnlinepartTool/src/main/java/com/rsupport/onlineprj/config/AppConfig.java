@@ -12,6 +12,7 @@ import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 
 import com.rsupport.onlineprj.model.Authorities;
 import com.rsupport.onlineprj.model.User;
@@ -63,4 +64,5 @@ public class AppConfig {
     transactionManager.setSessionFactory(getSessionFactory().getObject());
     return transactionManager;
   }
+ 
 }

@@ -4,6 +4,8 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link rel="stylesheet" href="/resources/css/login.css" type="text/css" >
+
 <title>CTI site</title>
 </head>
 <body>
@@ -11,7 +13,7 @@
 	<h2>${message}</h2> 
 
 	<form action="/logout" method="post">
-		<input value="Logout" type="submit">
+		<input value="Logout" type="submit" class="form-control">
 	</form>
 </body>
 </html>

@@ -38,5 +38,6 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.launching.macosx.MacOSXType/OpenJDK 15.0.1 [15.0.1]"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
