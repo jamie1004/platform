@@ -2,13 +2,11 @@
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
-
 <!DOCTYPE html>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
-<link href='<c:url value="/resources/css/login.css" />' rel="stylesheet"  type="text/css" >  
+<link href='<spring:url value="/resources/css/login.css" />' rel="stylesheet"  type="text/css" >  
 
 <title>RSUPPORT OlinePart</title>
 </head>
