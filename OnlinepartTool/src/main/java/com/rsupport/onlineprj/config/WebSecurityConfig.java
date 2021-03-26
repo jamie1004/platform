@@ -33,18 +33,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   
   @Override public void configure(WebSecurity web) throws Exception { 
 	  web
-	  	.ignoring().antMatchers("/css", "/js"); 
+	  	.ignoring().antMatchers("/css", "/js", "/img","/scss","/map"); 
   }
   
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
-    .authorizeRequests().antMatchers("/resources/**").permitAll()
-    .and()
-    .formLogin().loginPage("/login").loginProcessingUrl("/loginAction").defaultSuccessUrl("/").permitAll()
-    .and()
-    .logout().logoutSuccessUrl("/login").permitAll()
-    .and()
-    .csrf().disable();
+    .authorizeRequests().antMatchers("/resources/**").permitAll();
+//    .and()
+//    .formLogin().loginPage("/login").loginProcessingUrl("/loginAction").defaultSuccessUrl("/").permitAll()
+//    .and()
+//    .logout().logoutSuccessUrl("/login").permitAll()
+//    .and()
+ 
   }
 }
