@@ -14,4 +14,9 @@ public class MyContoller {
     model.addAttribute("message", "You are logged in as " + principal.getName());
     return "index";
   }
+  
+  @RequestMapping("/ctiadmin")
+  public String admin() throws Exception {
+        return "ctiadmin";
+  }
 }

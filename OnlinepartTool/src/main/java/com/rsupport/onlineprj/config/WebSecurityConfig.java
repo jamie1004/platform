@@ -20,7 +20,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   private UserDetailsService userDetailsService;
   
   @Bean
-  public BCryptPasswordEncoder passwordEncoder() { //password 정
+  public BCryptPasswordEncoder passwordEncoder() { //password �젙
     return new BCryptPasswordEncoder();
   };
   
@@ -33,18 +33,18 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
   
   @Override public void configure(WebSecurity web) throws Exception { 
 	  web
-	  	.ignoring().antMatchers("/css", "/js", "/img","/scss","/map"); 
+	  	.ignoring().antMatchers("/resources/css/**", "/js", "/img","/scss","/map"); 
   }
   
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http
     .authorizeRequests().antMatchers("/resources/**").permitAll();
-//    .and()
-//    .formLogin().loginPage("/login").loginProcessingUrl("/loginAction").defaultSuccessUrl("/").permitAll()
-//    .and()
-//    .logout().logoutSuccessUrl("/login").permitAll()
-//    .and()
+    .and()
+    .formLogin().loginPage("/login").loginProcessingUrl("/loginAction").defaultSuccessUrl("/").permitAll()
+    .and()
+    .logout().logoutSuccessUrl("/login").permitAll()
+    .and()
  
   }
 }
