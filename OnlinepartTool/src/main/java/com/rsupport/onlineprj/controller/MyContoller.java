@@ -10,9 +10,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 public class MyContoller {
 
-  @GetMapping("/")
+  @GetMapping("/index")
   public String index(Model model, Principal principal) {
     return "index";
+  }
+  
+  @RequestMapping(value="/")
+  public String login() throws Exception {
+        return "login";
   }
   
   @RequestMapping(value="/ctiadmin")
