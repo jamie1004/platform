@@ -17,28 +17,30 @@
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
-    <body class="sb-nav-fixed">
+     <%@include file="<c:url value="../include/navbar.jsp"></c:url>"%>
+     
+ <!--   <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
-            <a class="navbar-brand" href="index.html">Rsupport online</a>
-            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="#"><i class="fas fa-bars"></i></button>
-            <!-- Navbar Search-->
+            <a class="navbar-brand" href="#">Rsupport online</a>
+            <button class="btn btn-link btn-sm order-1 order-lg-0" id="sidebarToggle" href="# "><i class="fas fa-bars"></i></button>
+            <!-- Navbar Search
             <form class="d-none d-md-inline-block form-inline ml-auto mr-0 mr-md-3 my-2 my-md-0">
                 <div class="input-group">
-                    <input class="form-control" type="text" placeholder="Search for..." aria-label="Search" aria-describedby="basic-addon2" />
+                    <input class="form-control" type="text" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2" />
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="button"><i class="fas fa-search"></i></button>
                     </div>
                 </div>
             </form>
-            <!-- Navbar-->
+            <!-- Navbar
             <ul class="navbar-nav ml-auto ml-md-0">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="#">admin</a>
+                        <a class="dropdown-item" href="<spring:url value="/ctiadmin"/>">admin</a>
                         <a class="dropdown-item" href="#"></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href='<spring:url value="/login"/>'>Logout</a>
+                        <a class="dropdown-item" href="login.html">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -48,16 +50,19 @@
                 <nav class="sb-sidenav accordion sb-sidenav-dark" id="sidenavAccordion">
                     <div class="sb-sidenav-menu">
                         <div class="nav">
-                            <div class="sb-sidenav-menu-heading">S upport</div>
-                           
-                            <a class="nav-link" href='<spring:url value="/ctiadmin"/>'>
+                            <div class="sb-sidenav-menu-heading">Support</div>
+                            <a class="nav-link" href="<spring:url value="/index"/>">
+                                <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
+                                INSERT
+                            </a>
+                            <a class="nav-link" href="<spring:url value="/ctiadmin"/>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                                 ADMIN
                             </a>
                             <div class="sb-sidenav-menu-heading"></div>
                             <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                                 <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
-                                Layouts
+                                Admin
                                 <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                             </a>
                             <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
@@ -108,77 +113,96 @@
                             </a>
                         </div>
                     </div>
-                    <div class="sb-sidenav-footer">
-                        <div class="small">Logged in as:</div>
-                        Start Bootstrap
-                    </div>
                 </nav>
-            </div>
+            </div> --> 
             <div id="layoutSidenav_content">
-                <main>
+                <main style="margin-right: 40px;">
                     <div class="container-fluid">
-                        <h1 class="mt-4">Dashboard</h1>
-                        <ol class="breadcrumb mb-4">
-                            <li class="breadcrumb-item active">Dashboard</li>
-                        </ol>
-                        <div class="row">
+                        <h1 class="mt-4">
+                            Support
+                        </h1>
+                        <br>
+                        <!-- <ol class="breadcrumb mb-2">
+                            <li class="breadcrumb-item active" style='font-weight: 700;'>INSERT</li>
                             <div class="col-xl-3 col-md-6">
-                                <div class="card bg-primary text-white mb-4">
-                                    <div class="card-body">Primary Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-warning text-white mb-4">
-                                    <div class="card-body">Warning Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-success text-white mb-4">
-                                    <div class="card-body">Success Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-3 col-md-6">
-                                <div class="card bg-danger text-white mb-4">
-                                    <div class="card-body">Danger Card</div>
-                                    <div class="card-footer d-flex align-items-center justify-content-between">
-                                        <a class="small text-white stretched-link" href="#">View Details</a>
-                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
-                                    </div>
+                        </ol>        -->
+                    </div>
+                    <div class="card mb-4">
+                        <div class="card-header">
+                            <i class="fas fa-table mr-1"></i>
+                            SUPPORT INSERT
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <br>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="text" class="form-control" placeholder="이름" name="insert_name" maxlength="50">
+                                            </td>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="number" class="form-control" placeholder="번호" name="insert_num" maxlength="50">
+                                            </td>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="email" class="form-control" placeholder="이메일" name="insert_email" maxlength="50">
+                                            </td>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="text" class="form-control" placeholder="문의사항" name="insert_q" maxlength="2048" style="height: 150px;">
+                                            </td>
+                                        </tr>                                        
+                                    </tbody> 
+                                 </div>
+                                <div class="col-md-6">
+                                    <br>
+                                    <tbody>
+                                        <tr>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="text" class="form-control" placeholder="ID" name="insert_name" maxlength="50">
+                                            </td>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="number" class="form-control" placeholder="번호" name="insert_num" maxlength="50">
+                                            </td>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="email" class="form-control" placeholder="이메일" name="insert_email" maxlength="50">
+                                            </td>
+                                            <td style="padding-bottom: 10px;">
+                                                <input type="text" class="form-control" placeholder="문의사항" name="insert_q" maxlength="2048" style="height: 150px;">
+                                            </td>
+                                        </tr>                                          
+                                    </tbody>
+                                    <br>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-area mr-1"></i>
-                                        Area Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myAreaChart" width="100%" height="40"></canvas></div>
-                                </div>
-                            </div>
-                            <div class="col-xl-6">
-                                <div class="card mb-4">
-                                    <div class="card-header">
-                                        <i class="fas fa-chart-bar mr-1"></i>
-                                        Bar Chart Example
-                                    </div>
-                                    <div class="card-body"><canvas id="myBarChart" width="100%" height="40"></canvas></div>
+                    </div>               
+                        <!--<div class="col-xl-3 col-md-6">
+                            <div class="card bg-warning text-white mb-4">
+                                <div class="card-body">Warning Card</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
                                 </div>
                             </div>
                         </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-success text-white mb-4">
+                                <div class="card-body">Success Card</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xl-3 col-md-6">
+                            <div class="card bg-danger text-white mb-4">
+                                <div class="card-body">Danger Card</div>
+                                <div class="card-footer d-flex align-items-center justify-content-between">
+                                    <a class="small text-white stretched-link" href="#">View Details</a>
+                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                </div>
+                            </div>
+                        </div> -->
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
@@ -197,7 +221,7 @@
                                                 <th>Salary</th>
                                             </tr>
                                         </thead>
-                                        <tfoot>
+                                         <tfoot>
                                             <tr>
                                                 <th>Name</th>
                                                 <th>Position</th>
@@ -272,7 +296,7 @@
                                                 <td>2010/10/14</td>
                                                 <td>$327,900</td>
                                             </tr>
-                                            <tr>
+                                             <tr>
                                                 <td>Colleen Hurst</td>
                                                 <td>Javascript Developer</td>
                                                 <td>San Francisco</td>
@@ -656,7 +680,7 @@
                                                 <td>2011/06/27</td>
                                                 <td>$183,000</td>
                                             </tr>
-                                             <tr>
+                                            <tr>
                                                 <td>Donna Snider</td>
                                                 <td>Customer Support</td>
                                                 <td>New York</td>
@@ -670,21 +694,21 @@
                             </div>
                         </div>
                     </div>
-                </main>
-                <footer class="py-4 bg-light mt-auto">
-                    <div class="container-fluid">
-                        <div class="d-flex align-items-center justify-content-between small">
-                            <div class="text-muted">Copyright &copy; Your Website 2020</div>
-                            <div>
-                                <a href="#">Privacy Policy</a>
-                                &middot;
-                                <a href="#">Terms &amp; Conditions</a>
+                    <!-- <footer class="py-4 bg-light mt-auto">
+                        <div class="container-fluid">
+                            <div class="d-flex align-items-center justify-content-between small">
+                                <div class="text-muted">Copyright &copy; Your Website 2020</div>
+                                <div>
+                                    <a href="#">Privacy Policy</a>
+                                    &middot;
+                                    <a href="#">Terms &amp; Conditions</a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </footer>
+                    </footer> -->
+                </main>
             </div>
-        </div> 
+        </div>
         <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>
         <script src="js/scripts.js"></script>
@@ -693,6 +717,7 @@
         <script src="assets/demo/chart-bar-demo.js"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/jquery.dataTables.min.js" crossorigin="anonymous"></script>
         <script src="https://cdn.datatables.net/1.10.20/js/dataTables.bootstrap4.min.js" crossorigin="anonymous"></script>
-        <script src="assets/demo/datatables-demo.js"></script>
+        <script src="assets/demo/datatables-demo.js"></script> 
     </body>
 </html>
+   
