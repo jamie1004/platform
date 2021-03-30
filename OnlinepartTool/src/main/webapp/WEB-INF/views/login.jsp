@@ -25,7 +25,7 @@
 				<label for='pw'>PASSWORD</label>
 			</div>
 			<div class="btn-area">
-				<button type="submit">LOGdIN</button>
+				<button type="submit">LOGIN</button>
 			</div>
 		</form>
  			<div class="caption">
