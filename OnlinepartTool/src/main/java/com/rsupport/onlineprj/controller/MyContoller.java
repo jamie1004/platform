@@ -22,8 +22,8 @@ public class MyContoller {
   @GetMapping("/index")
   public String index(Model model, Principal principal) {
 	
-	List<String> questions = createQuestion();
-    model.addAttribute("questions", questions);
+//	List<String> questions = createQuestion();
+//    model.addAttribute("questions", questions);
     return "index";
   }
   
