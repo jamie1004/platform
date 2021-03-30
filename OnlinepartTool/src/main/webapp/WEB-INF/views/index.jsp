@@ -14,6 +14,7 @@
         <meta name="author" content="" />
         <title>Rsupport CTI</title>
         <link href='<c:url value="/resources/css/styles.css"/>' rel="stylesheet"  type="text/css" > 
+        <link href='<c:url value="/resources/css/styles2.css"/>' rel="stylesheet"  type="text/css" >
         <link href="https://cdn.datatables.net/1.10.20/css/dataTables.bootstrap4.min.css" rel="stylesheet" crossorigin="anonymous" />
         <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/js/all.min.js" crossorigin="anonymous"></script>
     </head>
@@ -35,10 +36,10 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="userDropdown" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="userDropdown">
-                        <a class="dropdown-item" href="/ctiadmin.jsp">admin</a>
+                        <a class="dropdown-item" href="<spring:url value="/ctiadmin"/>">admin</a>
                         <a class="dropdown-item" href="#"></a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="/login.jsp">Logout</a>
+                        <a class="dropdown-item" href="<spring:url value="/login"/>">Logout</a>
                     </div>
                 </li>
             </ul>
@@ -57,14 +58,14 @@
                             </a>
                             <div class="collapse" id="collapseRecode" aria-labelledby="headingOne" data-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav">
-                                    <a class="nav-link" href="layout-static.html">Add</a>
+                                    <a class="nav-link" href="<spring:url value="/ctiadmin"/>">Add</a>
                                     <a class="nav-link" href="layout-sidenav-light.html">Find</a>
                                 </nav>
                             </div>
                              <!--admin Dropnav-->
-                            <a class="nav-link" href="index.html">
+                            <a class="nav-link" href="<spring:url value="/ctiadmin"/>">
                                 <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
-                                ADMIN
+                                Admin
                             </a>
                             <div class="sb-sidenav-menu-heading">Tool</div> 
                              <!--sms Dropnav-->
@@ -86,7 +87,7 @@
             <div id="layoutSidenav_content">
                 <main>
                     <div class="container-fluid">
-                        <h1 class="mt-4">Support</h1>
+                        <h3 class="mt-4">Support</h2>
                         <br>
                         <!-- <ol class="breadcrumb mb-4">
                             <li class="breadcrumb-item"><a href="index.html"></a></li>
@@ -100,8 +101,8 @@
                             <div class ="card-body">
                                     <div class="container-fluid">
                                         <!-- <table class = "table table-bordered" id="insert_table"> -->
-                                            <div class="row" style="margin-left: 0.2%";>
-                                                <div class ="form-group"></div>
+                                        <form method="post">
+                                            <div class="row" style="margin-left: 0.2%;">
                                                 <div>
                                                     <select name="first_cata">
                                                         <option value="RC">RemoteCall</option>
@@ -142,10 +143,10 @@
                                             <br>
                                             <div id="insert_board">
                                                 <div class="row">    
-                                                        <div class="col-md-6">
-                                                            <tr style="padding-bottom: 20%;">
+                                                        <div class="col-md-6" style="border-right:3px solid gray";>
+                                                            <tr>
                                                                 <td>
-                                                                    <input type="text" class="form-control" placeholder="이름" name="insert_name" maxlength="50">
+                                                                    <input type="text" class="form-control" placeholder="이름" name="insert_name" maxlength="50" required>
                                                                 </td>
                                                                 <td>
                                                                     <input type="number" class="form-control" placeholder="번호" name="insert_num" maxlength="50">
@@ -154,7 +155,7 @@
                                                                     <input type="email" class="form-control" placeholder="이메일" name="insert_email" maxlength="50">
                                                                 </td>
                                                                 <td>
-                                                                    <input type="text" class="form-control" placeholder="문의사항" name="insert_q" maxlength="2048" style="height: 150px;">
+                                                                    <input type="text" class="form-control" placeholder="문의사항" name="insert_q" maxlength="2048" style="height: 150px;"required>
                                                                 </td>
                                                             </tr>                                        
                                                         </div>
@@ -171,7 +172,7 @@
                                                                 <input type="text" class="form-control" placeholder="사용자 ID" name="insert_userid" maxlength="50">
                                                             </td>
                                                             <td style="padding-bottom: 10px;">
-                                                                <input type="text" class="form-control" placeholder="지원사항" name="insert_sup" maxlength="2048" style="height: 150px;">
+                                                                <input type="text" class="form-control" placeholder="지원사항" name="insert_sup" maxlength="2048" style="height: 150px;"required>
                                                             </td>
                                                         </tr>    
                                                     </div>
@@ -179,6 +180,20 @@
                                             </div> 
                                         </div>
                                     <!-- </table> -->
+                                    <br>
+                                   		 <button type="submit" style="float:right;margin-left:5px;" class="btn btn-primary btn-icon-split btn-sm">
+	                                       	 <span class="icon text-white-50">
+	                                            <i class="fas fa-check"></i>
+	                                       	 </span>
+	                                        <span class="text">SAVE</span>
+                                   		 </button>
+                                   		  <button type="submit" style="float:right;" class="btn btn-danger btn-icon-split btn-sm">
+	                                       	 <span class="icon text-white-50">
+	                                            <i class="fas fa-trash"></i>
+	                                       	 </span>
+	                                        <span class="text">RESET</span>
+                                   		 </button>
+                                   	</form>
                                 </div>
                             </div>
 
@@ -186,44 +201,60 @@
                         <div class="card mb-4">
                             <div class="card-header">
                                 <i class="fas fa-table mr-1"></i>
-                                DataTable Example
+                                DashBoard
                             </div>
                             <div class="card-body">
-                                <div class="table-responsive">
-                                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
-                                        <thead>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </thead>
-                                        <tfoot>
-                                            <tr>
-                                                <th>Name</th>
-                                                <th>Position</th>
-                                                <th>Office</th>
-                                                <th>Age</th>
-                                                <th>Start date</th>
-                                                <th>Salary</th>
-                                            </tr>
-                                        </tfoot>
-                                        <tbody>
-                                            
-                                            <tr>
-                                                <td>Donna Snider</td>
-                                                <td>Customer Support</td>
-                                                <td>New York</td>
-                                                <td>27</td>
-                                                <td>2011/01/25</td>
-                                                <td>$112,000</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                            <div class="row">
+                            <div class="col-xl-3 col-md-6 mb-4">
+		                            <div class="card border-left-success shadow h-100 py-2">
+		                                <div class="card-body">
+		                                    <div class="row no-gutters align-items-center">
+		                                        <div class="col mr-2">
+		                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+		                                                상담원 상태</div>
+		                                            <div class="h5 mb-0 font-weight-bold text-gray-800">상담중</div>
+		                                        </div>
+		                                        <div class="col-auto">
+		                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="col-xl-3 col-md-6 mb-4">
+		                            <div class="card border-left-success shadow h-100 py-2">
+		                                <div class="card-body">
+		                                    <div class="row no-gutters align-items-center">
+		                                        <div class="col mr-2">
+		                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+		                                                상담원 상태</div>
+		                                            <div class="h5 mb-0 font-weight-bold text-gray-800">상담중</div>
+		                                        </div>
+		                                        <div class="col-auto">
+		                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        <div class="col-xl-3 col-md-6 mb-4">
+		                            <div class="card border-left-success shadow h-100 py-2">
+		                                <div class="card-body">
+		                                    <div class="row no-gutters align-items-center">
+		                                        <div class="col mr-2">
+		                                            <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
+		                                                상담원 상태</div>
+		                                            <div class="h5 mb-0 font-weight-bold text-gray-800">상담중</div>
+		                                        </div>
+		                                        <div class="col-auto">
+		                                            <i class="fas fa-clipboard-list fa-2x text-gray-300"></i>
+		                                        </div>
+		                                    </div>
+		                                </div>
+		                            </div>
+		                        </div>
+		                        </div>
+		                        
                             </div>
                         </div>
                     </div>
