@@ -15,46 +15,46 @@ import javax.persistence.Table;
 public class User {
   @Id
   @Column(name = "USERNAME")
-  private String username;
+  private String m_sUsername;
 
   @Column(name = "PASSWORD", nullable = false)
-  private String password;
+  private String m_sPassword;
 
   @Column(name = "ENABLED", nullable = false)
-  private boolean enabled;
+  private boolean m_bEnabled;
 
-  @OneToMany(cascade = CascadeType.ALL, mappedBy = "user")
-  private Set<Authorities> authorities = new HashSet<>();
+  @OneToMany(cascade = CascadeType.ALL, mappedBy = "m_user")
+  private Set<Authorities> m_authorities = new HashSet<>();
 
   public String getUsername() {
-    return username;
+    return m_sUsername;
   }
 
   public void setUsername(String username) {
-    this.username = username;
+    this.m_sUsername = username;
   }
 
   public String getPassword() {
-    return password;
+    return m_sPassword;
   }
 
   public void setPassword(String password) {
-    this.password = password;
+    this.m_sPassword = password;
   }
 
   public boolean isEnabled() {
-    return enabled;
+    return m_bEnabled;
   }
 
   public void setEnabled(boolean enabled) {
-    this.enabled = enabled;
+    this.m_bEnabled = enabled;
   }
 
   public Set<Authorities> getAuthorities() {
-    return authorities;
+    return m_authorities;
   }
 
   public void setAuthorities(Set<Authorities> authorities) {
-    this.authorities = authorities;
+    this.m_authorities = authorities;
   }
 }

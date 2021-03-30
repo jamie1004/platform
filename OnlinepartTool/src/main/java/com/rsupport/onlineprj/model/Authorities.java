@@ -12,26 +12,26 @@ import javax.persistence.Table;
 public class Authorities {
   @Id
   @Column(name = "AUTHORITY")
-  private String authority;
+  private String m_sAuthority;
 
   @ManyToOne
   @JoinColumn(name = "USERNAME")
-  private User user;
+  private User m_user;
 
   public String getAuthority() {
-    return authority;
+    return m_sAuthority;
   }
 
   public void setAuthority(String authority) {
-    this.authority = authority;
+    this.m_sAuthority = authority;
   }
 
   public User getUser() {
-    return user;
+    return m_user;
   }
 
   public void setUser(User user) {
-    this.user = user;
+    this.m_user = user;
   }
 
 }
