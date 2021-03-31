@@ -12,8 +12,6 @@ import org.springframework.core.env.Environment;
 import org.springframework.orm.hibernate5.HibernateTransactionManager;
 import org.springframework.orm.hibernate5.LocalSessionFactoryBean;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
-
 import com.rsupport.onlineprj.model.Authorities;
 import com.rsupport.onlineprj.model.User;
 
@@ -23,7 +21,8 @@ import static org.hibernate.cfg.Environment.*;
 @PropertySource("classpath:db.properties")
 @EnableTransactionManagement
 @ComponentScans(value = { @ComponentScan("com.rsupport.onlineprj"),
-    @ComponentScan("com.rsupport.onlineprj.service") })
+@ComponentScan("com.rsupport.onlineprj.service") })
+
 public class AppConfig {
 
   @Autowired
